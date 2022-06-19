@@ -76,7 +76,7 @@
 
 
     <script>
-        let user = 'anonymous'
+        let user = prompt("Enter your name:")
         const chats = document.getElementById('chats')
         const sendbtn = document.getElementById('sendbtn')
         //const socket = io('ws://anonchat-socket-io-server.herokuapp.com/socket.io/?EIO=4&transport=websocket')
@@ -96,7 +96,7 @@
         socket.on('data', (data)=>{
             let username = data.user
             // let msg = `${username}: ${data.title}`
-            let msg = `${data.title}`
+            let msg = `${data.user}: ${data.title}`
             let lim = document.createElement('li')
             lim.innerText = msg
             chats.appendChild(lim)
