@@ -96,18 +96,18 @@
     	const socket = io('https://anonchat-socket-io-server.herokuapp.com')
     	let room = ''
     	const ab = document.querySelector(".app-bar")
-    	if (navigator.geolocation) {
-    		navigator.geolocation.getCurrentPosition((position)=>{
-    			room = `${position.coords.latitude.toString().slice(0,5)}..${position.coords.longitude.toString().slice(0,5)}`
-    			ab.innerText = room
-    			socket.emit('join-room',room)
-    		});
-  		}
-        else{
+    	//if (navigator.geolocation) {
+    	//	navigator.geolocation.getCurrentPosition((position)=>{
+    	//		room = `${position.coords.latitude.toString().slice(0,5)}..${position.coords.longitude.toString().slice(0,5)}`
+    	//		ab.innerText = room
+    	//		socket.emit('join-room',room)
+    	//	});
+  		//}
+        //else{
             room = 'global'
             ab.innerText = room
             socket.emit('join-room',room)
-        }
+        //}
     	
     
         let user = prompt("Enter your name:")
