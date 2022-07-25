@@ -91,7 +91,7 @@
 
 
     <script>
-        let user = prompt("Enter your name:")
+        //let user = prompt("Enter your name:")
     	//const socket = io('http://localhost:3000')
     	const socket = io('https://anonchat-socket-io-server.herokuapp.com')
     	let room = ''
@@ -103,9 +103,14 @@
     			socket.emit('join-room',room)
     		});
   		}
+        else{
+            room = 'global'
+            ab.innerText = room
+            socket.emit('join-room',room)
+        }
     	
     
-        //let user = prompt("Enter your name:")
+        let user = prompt("Enter your name:")
         const chats = document.getElementById('chats')
         const sendbtn = document.getElementById('sendbtn')
         //const socket = io('ws://anonchat-socket-io-server.herokuapp.com/socket.io/?EIO=4&transport=websocket')
